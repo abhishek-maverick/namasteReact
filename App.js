@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 const heading = React.createElement(
   "h1",
   {
@@ -5,7 +7,7 @@ const heading = React.createElement(
     className: "myClass",
     style: { color: "red", background: "black", fontSize: "80px" },
   },
-  "Namaste Everyone"
+  "Namaste Everyone for Parcel"
 );
 const heading2 = React.createElement(
   "h2",
