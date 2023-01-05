@@ -1,0 +1,22 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/abhishek-maverick/namasteReact.git"
+  },
+  "author": "Abhishek Ranjan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhishek-maverick/namasteReact/issues"
+  },
+  "homepage": "https://github.com/abhishek-maverick/namasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
+}
