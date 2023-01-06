@@ -27,6 +27,8 @@ const container = React.createElement(
   [heading, heading2]
 );
 console.log(container);
+const jsx = <h1>Hey how are you ?</h1>;
+console.log(jsx.props);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(container);
