@@ -9,7 +9,7 @@ import ReactDOM from "react-dom/client";
     Body
          - Search Bar
          - RestaurantList
-           -Restaurant Card
+           -Restaurant Card(many cards)
              -Image
              -Name
              -Rating
@@ -34,8 +34,690 @@ const Title = () => (
 
 // console.log(HeaderComponent());
 
+const restaurantList = [
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "633340",
+      name: "Rolls On Wheels",
+      uuid: "c7dc4315-6eec-4ac2-b536-bddadeb518b0",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "du0konscdj1bbpctjf8z",
+      cuisines: ["Snacks"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 29,
+      minDeliveryTime: 29,
+      maxDeliveryTime: 29,
+      slaString: "29 MINS",
+      lastMileTravel: 2.9000000953674316,
+      slugs: {
+        restaurant: "rolls-on-wheels-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "No.16, SY No. 45 & 46 &48 , Channasandra Village, Uttarahalli Hobli, Bangalore -560098",
+      locality: "Channasandra Village",
+      parentId: 784,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "40% off",
+        shortDescriptionList: [
+          {
+            meta: "40% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "40% off up to ₹80 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "40% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "40% off up to ₹80 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=5649896~p=1~eid=00000185-916a-cb0f-1784-eec2000c015b",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.9 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "633340",
+        deliveryTime: 29,
+        minDeliveryTime: 29,
+        maxDeliveryTime: 29,
+        lastMileTravel: 2.9000000953674316,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.4",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "30827",
+      name: "McDonald's",
+      uuid: "9ee9a777-6dc9-48a8-8191-4a292b27385b",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "0e8f93a56b93e43d7627c2c21bc1106c",
+      cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 30,
+      minDeliveryTime: 30,
+      maxDeliveryTime: 30,
+      slaString: "30 MINS",
+      lastMileTravel: 4.599999904632568,
+      slugs: {
+        restaurant: "mcdonalds-arch-mall-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Mc Donald's family restaurant,  Gopalan Arch mall Shop no 18/2, Raja Rajeshwari nagar, Nayandahalli , Mysore road, Bengaluru 560039",
+      locality: "Gopalan Arcade",
+      parentId: 630,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "40% off",
+        shortDescriptionList: [
+          {
+            meta: "40% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "40% off up to ₹80 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "40% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "40% off up to ₹80 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 4000,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 4000,
+        message: "",
+        title: "Delivery Charge",
+        amount: "4000",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "4.5 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "30827",
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 30,
+        lastMileTravel: 4.599999904632568,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.3",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "336905",
+      name: "Pizza Hut",
+      uuid: "c81da795-dfca-4b1f-b78e-206592c0602f",
+      city: "1",
+      area: "Kengeri",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "f0qmc8z1clxftvxcrlh4",
+      cuisines: ["Pizzas"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 29,
+      minDeliveryTime: 29,
+      maxDeliveryTime: 29,
+      slaString: "29 MINS",
+      lastMileTravel: 2.9000000953674316,
+      slugs: {
+        restaurant: "pizza-hut-kengeri-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Pizza Hut at Ground Floor at Site No- 1106, Khata No- 476/1106/416, Kengeri Satellite",
+      locality: "Harsha Layout",
+      parentId: 721,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.9 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "336905",
+        deliveryTime: 29,
+        minDeliveryTime: 29,
+        maxDeliveryTime: 29,
+        lastMileTravel: 2.9000000953674316,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "405178",
+      name: "Leon's - Burgers & Wings (Leon Grill)",
+      uuid: "cf5c4987-d436-4349-93c5-f33d7bb2536b",
+      city: "1",
+      area: "Channasandra",
+      totalRatingsString: "500+ ratings",
+      cloudinaryImageId: "mo8uj16sdakba12big0c",
+      cuisines: ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 2.9000000953674316,
+      slugs: {
+        restaurant:
+          "leon-grill-kumaraswamy-layout-&-uttarahalli-kumaraswamy-layout-&-uttarahalli",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Sy No.22/4,22/6,22/7 (Re Sy Nos. 45&46) 48 Situated At Channasandra Village, Uttarahalli Hobli, Bangalore, RR Nagar, B.B.M.P West, Karnataka.",
+      locality: "Channasandra",
+      parentId: 371281,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use MISSEDYOU",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code MISSEDYOU",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use MISSEDYOU",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code MISSEDYOU",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=5697119~p=4~eid=00000185-916a-cb0f-1784-eec3000c0432",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "2.9 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "405178",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 2.9000000953674316,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.4",
+      totalRatings: 500,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "342547",
+      name: "Meghana Foods",
+      uuid: "82158e90-2497-4b2a-93fc-6ea86f859dcd",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "g0isknuhld1ltwxkjkcg",
+      cuisines: ["Biryani", "Andhra", "South Indian"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 3.799999952316284,
+      slugs: {
+        restaurant: "meghana-foods-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Sankranti Arcade No.285C, Phase I, 9Th Main Road, Ideal Home Rajarajeshwarinagar, Remco Bhel Layout, Ideal Homes Twp, RR Nagar, Bengaluru, Karnataka 560098",
+      locality: "BHEL layout",
+      parentId: 635,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3400,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3400,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3400",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3.7 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "342547",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 3.799999952316284,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.3",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+];
+
+//Optional Chaining
+const RestaurantCard = ({ restaurant }) => {
+  console.log(restaurant);
+  const { cloudinaryImageId, name, cuisines, lastMileTravelString } =
+    restaurant.data;
+  return (
+    <div className="card">
+      {console.log()}
+      <img
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          cloudinaryImageId
+        }
+      />
+      <h2> {name}</h2>
+      <h3>{cuisines.join(" ,")}</h3>
+      <h4>{lastMileTravelString} to reach</h4>
+    </div>
+  );
+};
+
 const Body = () => {
-  return <h4>Body</h4>;
+  return (
+    <div className="restaurant-list">
+      <RestaurantCard restaurant={restaurantList[0]} />
+      <RestaurantCard restaurant={restaurantList[1]} />
+      <RestaurantCard restaurant={restaurantList[3]} />
+      <RestaurantCard restaurant={restaurantList[4]} />
+    </div>
+  );
 };
 const Footer = () => <h4>Footer</h4>;
 
