@@ -689,10 +689,14 @@ const restaurantList = [
 ];
 
 //Optional Chaining
-const RestaurantCard = ({ restaurant }) => {
-  console.log(restaurant);
-  const { cloudinaryImageId, name, cuisines, lastMileTravelString } =
-    restaurant.data;
+const RestaurantCard = ({
+  cloudinaryImageId,
+  name,
+  cuisines,
+  lastMileTravelString,
+}) => {
+  // const { cloudinaryImageId, name, cuisines, lastMileTravelString } =
+  //   restaurant.data;
   return (
     <div className="card">
       {console.log()}
@@ -712,10 +716,14 @@ const RestaurantCard = ({ restaurant }) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard restaurant={restaurantList[0]} />
-      <RestaurantCard restaurant={restaurantList[1]} />
-      <RestaurantCard restaurant={restaurantList[3]} />
-      <RestaurantCard restaurant={restaurantList[4]} />
+      {restaurantList.map((each) => (
+        <RestaurantCard {...each.data} key={each.data.uuid} />
+      ))}
+
+      {/* <RestaurantCard {...restaurantList[0].data} />
+      <RestaurantCard {...restaurantList[1].data} />
+      <RestaurantCard {...restaurantList[3].data} />
+      <RestaurantCard {...restaurantList[4].data} /> */}
     </div>
   );
 };
