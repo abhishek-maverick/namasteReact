@@ -4,7 +4,9 @@ import { useState } from "react";
 
 const filterData = (searchTxt, restaurants) => {
   if (searchTxt === "") return restaurantList;
-  return restaurants.filter((restro) => restro.data.name.includes(searchTxt));
+  return restaurantList.filter((restro) =>
+    restro.data.name.includes(searchTxt)
+  );
 };
 const Body = () => {
   //searchTxt is a local variable
