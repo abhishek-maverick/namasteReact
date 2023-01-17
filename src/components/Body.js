@@ -9,6 +9,7 @@ const filterData = (searchTxt, restaurants) => {
     restro?.data?.name.toLowerCase()?.includes(searchTxt.toLowerCase())
   );
 };
+
 const Body = () => {
   //searchTxt is a local variable
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -20,20 +21,18 @@ const Body = () => {
   }, []);
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.135382&lng=75.852014&page_type=DESKTOP_WEB_LISTING"
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9178278&lng=77.4943073&page_type=DESKTOP_WEB_LISTING`
     );
     const json = await data.json();
-    console.log(json?.data?.cards[2]?.data?.data?.cards);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
-  console.log("component re-rendered");
 
   //Conditional rendering
   // if restaurant is empty => shimmer Ui
   // if restaurant has data => actual Data UI
 
-  return allRestaurants.length === 0 ? (
+  return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -58,10 +57,10 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-list">
-        {filteredRestaurants.length === 0 ? (
+        {filteredRestaurants?.length === 0 ? (
           <h1>No restaurant matches your search...:(</h1>
         ) : (
-          filteredRestaurants.map((each) => (
+          filteredRestaurants?.map((each) => (
             <RestaurantCard {...each.data} key={each.data.id} />
           ))
         )}

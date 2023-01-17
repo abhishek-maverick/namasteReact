@@ -1,3 +1,10 @@
+import { useState } from "react";
+
+const loggedInUser = (LoginCheck) => {
+  //API to be called and if returns Success => Authenticated else not Authenticated
+  return LoginCheck ? true : false;
+};
+
 export const Title = () => (
   <a href="/">
     <img
@@ -13,6 +20,7 @@ const styleObj = {
 };
 
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <div className="header" style={styleObj}>
       <Title />
@@ -24,6 +32,13 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {loggedInUser(isLoggedIn) ? (
+        <button onClick={() => setIsLoggedIn(!isLoggedIn)}>Logout</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn(!isLoggedIn)}>Login</button>
+      )}
+      {/* <button>Login</button>
+      <button>Logout</button> */}
     </div>
   );
 };
