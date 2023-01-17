@@ -6,7 +6,7 @@ import Shimmer from "./Shimmer";
 const filterData = (searchTxt, restaurants) => {
   if (searchTxt === "") return restaurants;
   return restaurants.filter((restro) =>
-    restro.data.name.toLowerCase().includes(searchTxt.toLowerCase())
+    restro?.data?.name.toLowerCase()?.includes(searchTxt.toLowerCase())
   );
 };
 const Body = () => {
@@ -58,9 +58,13 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-list">
-        {filteredRestaurants.map((each) => (
-          <RestaurantCard {...each.data} key={each.data.id} />
-        ))}
+        {filteredRestaurants.length === 0 ? (
+          <h1>No restaurant matches your search...:(</h1>
+        ) : (
+          filteredRestaurants.map((each) => (
+            <RestaurantCard {...each.data} key={each.data.id} />
+          ))
+        )}
 
         {/* <RestaurantCard {...restaurantList[0].data} />
       <RestaurantCard {...restaurantList[1].data} />
