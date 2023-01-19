@@ -4,6 +4,10 @@
   border: 1px solid black;
 }
 
+.nav-items {
+  margin-left: auto;
+}
+
 .nav-items > ul {
   list-style-type: none;
   display: flex;
@@ -15,13 +19,14 @@
 
 .logo {
   width: 100px;
+  height: 100%;
 }
 
 .card {
   width: 300px;
   border: 1px solid brown;
   padding: 25px;
-  margin: 10px;
+  margin: 12px;
   background-color: beige;
 }
 
@@ -32,4 +37,22 @@
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.search-btn {
+  margin: 5px;
+}
+.search-input {
+  width: 250px;
+  height: 20px;
+  margin-left: 13px;
+}
+
+.shimmer-card {
+  width: 300px;
+  height: 364.15px;
+  border: 1px solid brown;
+  padding: 25px;
+  margin: 12px;
+  background-color: lightgrey;
 }
