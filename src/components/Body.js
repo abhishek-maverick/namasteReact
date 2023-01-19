@@ -2,6 +2,7 @@ import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const filterData = (searchTxt, restaurants) => {
   if (searchTxt === "") return restaurants;
@@ -15,13 +16,25 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchTxt, setSearchTxt] = useState(""); //to create state variables
+  // const [lat, setLat] = useState(0);
+  // const [long, setLong] = useState(0);
 
   useEffect(() => {
+    // fetchLocation();
     getRestaurants();
-  }, []);
+  });
+
+  async function fetchLocation() {
+    await navigator.geolocation.getCurrentPosition((position) => {
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
+    });
+  }
   async function getRestaurants() {
+    const lat = 12.913913181622942;
+    const long = 77.49490890651941;
     const data = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9178278&lng=77.4943073&page_type=DESKTOP_WEB_LISTING`
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${long}&page_type=DESKTOP_WEB_LISTING`
     );
     const json = await data?.json();
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -61,7 +74,9 @@ const Body = () => {
           <h1>No restaurant matches your search...:(</h1>
         ) : (
           filteredRestaurants?.map((each) => (
-            <RestaurantCard {...each.data} key={each.data.id} />
+            <Link to={"restaurant/" + each.data.id} key={each.data.id}>
+              <RestaurantCard {...each.data} />
+            </Link>
           ))
         )}
 

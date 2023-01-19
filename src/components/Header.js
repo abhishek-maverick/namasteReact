@@ -1,10 +1,15 @@
 import { useState } from "react";
 import Logo from "../assets/img/foodVilla.jpg";
+import { Link } from "react-router-dom";
 
 const loggedInUser = (LoginCheck) => {
   //API to be called and if returns Success => Authenticated else not Authenticated
   return LoginCheck ? true : false;
 };
+
+// SPA => Single Page Application ???
+// Client Side Routing => routing manipuation in front-end, no need to reload the page
+// Server Side Routing => fetch all the details from the server
 
 export const Title = () => (
   <a href="/">
@@ -21,18 +26,37 @@ const Header = () => {
   return (
     <div className="header" style={styleObj}>
       <Title />
+      <h1 style={{ marginLeft: "auto" }}>Food Villa</h1>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
         </ul>
       </div>
       {loggedInUser(isLoggedIn) ? (
-        <button onClick={() => setIsLoggedIn(!isLoggedIn)}>Logout</button>
+        <button
+          style={{ width: "5%" }}
+          onClick={() => setIsLoggedIn(!isLoggedIn)}
+        >
+          Logout
+        </button>
       ) : (
-        <button onClick={() => setIsLoggedIn(!isLoggedIn)}>Login</button>
+        <button
+          style={{ width: "5%" }}
+          onClick={() => setIsLoggedIn(!isLoggedIn)}
+        >
+          Login
+        </button>
       )}
       {/* <button>Login</button>
       <button>Logout</button> */}
