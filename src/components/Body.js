@@ -22,7 +22,7 @@ const Body = () => {
   useEffect(() => {
     // fetchLocation();
     getRestaurants();
-  });
+  }, []);
 
   async function fetchLocation() {
     await navigator.geolocation.getCurrentPosition((position) => {

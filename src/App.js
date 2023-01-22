@@ -8,6 +8,8 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/Profile";
+import ProfileClass from "./components/ProfileClass";
 
 /*********
     Header
@@ -55,6 +57,12 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile", // => parentPath/{path}, don't have to give slash over here otherwise will be conisdered as localhost:1234/profile
+            element: <ProfileClass />,
+          },
+        ],
       },
       {
         path: "/contact",
