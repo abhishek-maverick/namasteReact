@@ -3,13 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-const filterData = (searchTxt, restaurants) => {
-  if (searchTxt === "") return restaurants;
-  return restaurants.filter((restro) =>
-    restro?.data?.name.toLowerCase()?.includes(searchTxt.toLowerCase())
-  );
-};
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   //searchTxt is a local variable
@@ -44,6 +39,12 @@ const Body = () => {
   //Conditional rendering
   // if restaurant is empty => shimmer Ui
   // if restaurant has data => actual Data UI
+
+  const online = useOnline();
+
+  if (!online) {
+    return <h1>🔴 Offline, Please check your internet connection</h1>;
+  }
 
   return allRestaurants?.length === 0 ? (
     <Shimmer />

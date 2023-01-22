@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -10,6 +10,11 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 import ProfileClass from "./components/ProfileClass";
+import Shimmer from "./components/Shimmer";
+// import Instamart from "./components/Instamart";
+
+const Instamart = lazy(() => import("./components/Instamart"));
+// upon On Deman Loading => upon Render => suspend Loading
 
 /*********
     Header
@@ -31,6 +36,15 @@ import ProfileClass from "./components/ProfileClass";
 
 // according to react convention name of a component should start with a capital letter
 // functional component is a normal function
+
+/*
+ * Chunking
+ * Code Splitting
+ * Dynamic Bundling
+ * Lazy Loading
+ * On Demand Looading
+ * Dynamic Import
+ */
 
 const AppLayout = () => {
   return (
@@ -71,6 +85,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

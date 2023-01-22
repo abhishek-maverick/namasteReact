@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "../assets/img/foodVilla.jpg";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const loggedInUser = (LoginCheck) => {
   //API to be called and if returns Success => Authenticated else not Authenticated
@@ -23,6 +24,8 @@ const styleObj = {
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const isOnline = useOnline();
+
   return (
     <div className="header" style={styleObj}>
       <Title />
@@ -41,8 +44,12 @@ const Header = () => {
           <li>
             <Link to="/cart">Cart</Link>
           </li>
+          <li>
+            <Link to="/instamart">Instamart</Link>
+          </li>
         </ul>
       </div>
+      <h2>{isOnline ? "✅" : "🔴"}</h2>
       {loggedInUser(isLoggedIn) ? (
         <button
           style={{ width: "5%" }}
