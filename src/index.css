@@ -1,4 +1,22 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Normal Native CSS
+ * SCSS
+ * inline CSS
+ * Component Libraries - Material UI, Base UI, Ant, Chakra
+ * Styled Components
+ * Tailwind CSS Framework
+ *     - CSS on the go (in the same file)
+ *     - reusability
+ *     - less bundle size
+ *     - flexible UI (customisable (major cons of material UI) )
+ *     - 
+ */
+
+/* .header {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
@@ -59,4 +77,4 @@
 }
 .menu {
   display: flex;
-}
+} */
