@@ -1,10 +1,11 @@
 import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
   //searchTxt is a local variable
@@ -45,6 +46,8 @@ const Body = () => {
   if (!online) {
     return <h1>🔴 Offline, Please check your internet connection</h1>;
   }
+
+  const { user } = useContext(UserContext);
 
   return allRestaurants?.length === 0 ? (
     <Shimmer />
