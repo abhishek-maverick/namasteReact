@@ -27,8 +27,8 @@ const Body = () => {
     });
   }
   async function getRestaurants() {
-    const lat = 12.913913181622942;
-    const long = 77.49490890651941;
+    const lat = 12.9698196;
+    const long = 77.7499721;
     const data = await fetch(
       `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${long}&page_type=DESKTOP_WEB_LISTING`
     );
