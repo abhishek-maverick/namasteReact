@@ -15,8 +15,8 @@ const ShimmerMenu = () => {
         <ul tyle={{ disply: "flex" }}>
           {Array(30)
             .fill("")
-            .map((item) => (
-              <li key={item}></li>
+            .map((item, index) => (
+              <li key={index}></li>
             ))}
         </ul>
       </div>
